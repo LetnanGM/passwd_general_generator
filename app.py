@@ -1,11 +1,13 @@
-import faker
 import random
 
 from typing import List
 
 class Generator:
     def __init__(self) -> None:
+        # country code, you can add more code country here
         self.code: List[str] = ["bt", "id", "kt", "pn"]
+        
+        # 'sifat' mean characteristic or 'trait' in english
         self.sifat: list = random.choice([
             "lucu", "cepat", "marah", 
             "dingin", "nakal", "lambat", 
@@ -13,6 +15,7 @@ class Generator:
             "liar", "aneh", "berani"
         ])
         
+        # 'benda' mean object like 'chair' or something like that.
         self.benda: list = random.choice([
             "kucing", "robot", "ninja", 
             "kodok", "pirat", "monyet", 
@@ -20,6 +23,8 @@ class Generator:
             "serigala", "alien", "naga"
         ])
         
+        # general wordlist indonesian, combined with name of lot a people, city name, village name, string number and combined with unique name 
+        # unique name like 'konoha' from naruto seriues :D
         self.wordlist = [
 	        'abiyah', 'abdilla', 'aca', 'acha', 'acaa', 'achaa', 'ai', 'aii', 'adawiah', 'adawiyah', 'ade', 'adel', 'adell', 'adel', 'adellaa', 'adelia', 'adellia', 'adeliya', 'adiba', 'adifa', 'adinda', 'aeni', 'aidah', 'aini', 'ainun', 'aira', 'asiah', 'aisah', 'aisyah', 'afifah', 'afipah', 'alawiah', 'alawiyah', 'alfatunisa', 'alfatunnisa', 'agnes', 'agnesia', 'ajahra', 'ajeng', 'ajeung', 'ajig', 'ajijah', 'ajizah', 'ajg', 'alesha', 'alia', 'alika', 'alimah', 'aliya', 'alifa', 'alifah', 'aliva', 'alivah', 'aliyah', 'almeera', 'almira', 'ama', 'amalia', 'amaliag', 'amaliyah', 'amanda', 'amidah', 'amira', 'aminah', 'ana', 'anantasia', 'anantasya', 'anastasia', 'anastasya', 'agnes', 'andini', 'ani', 'anisa', 'anita', 'any', 'anying', 'anyun', 'angela', 'angelina', 'anggraeni', 'anggraini', 'anggi', 'anggita', 'anggun', 'anjas', 'anjasmara', 'anjay', 'anugerah', 'anugrah', 'anjing', 'apifah', 'apipah', 'april', 'aprilia', 'aprillia', 'apriliani', 'apriliyani', 'aprilianti', 'apriliyanti', 'aqila', 'aqilla', 'ara', 'arra', 'arafah', 'arrafah', 'areta', 'aretha', 'arofah', 'arin', 'arini', 'ariani', 'arista', 'ariyani', 'aryani', 'aryanti', 'arianti', 'ariyanti', 'arumi', 'arsita', 'arsyita', 'arsila', 'asyila', 'asypa', 'asifa', 'asipa', 'asmi', 'asmara', 'asih', 'asilah', 'asti', 'astiani', 'astiyani', 'astuti', 'atik', 'atika', 'atikah', 'ayg', 'ayank', 'ayang', 'ayra', 'ayu', 'ayyu', 'ayunda', 'ayuni', 'ayudia', 'ayudiya', 'ayudiah', 'ayuningsih', 'azzahra', 'azijah', 'azizah', 'azmi', 'azmy', 'azura',
 	        'babi', 'baby', 'badriah', 'bajingan', 'bagong', 'bandung', 'bngst', 'bangsat', 'bela', 'bella', 'bibah', 'bila', 'billa', 'belinda', 'betharia', 'bintang', 'briana', 'britania', 'briela', 'briyana', 'budiarti', 'bulan', 'bunga', 'bungsu', 'bunyamin', 'butet',
@@ -51,24 +56,36 @@ class Generator:
         ]
     
     def _apply_random_format(self, name: str) -> str:
-        templates = [
-            lambda x: f"{x}{random.randint(10,99)}",
-            lambda x: f"{x}{random.choice(self.code)}",
-            lambda x: f"{x}!{x[0]}{random.randint(1,9)}{x[-1]}",
-            lambda x: f"{x}{random.choice(self.wordlist)}",
-            lambda x: f"{x}{random.randint(2000, 2026)}",
-            lambda x: f"{x}{x[-2:]}",
-            lambda x: f"{random.choice(self.wordlist)}-{x}",
-            lambda x: f"{x[:3]}_{x[-3:]}",
-            lambda x: f"{x}{random.randint(1, 10000)}",
-            lambda x: f"{x}{random.choice(self.sifat)}",
-            lambda x: f"{self.sifat}_{x}{random.randint(1, 10000)}",
-            lambda x: f"{self.benda}{random.randint(2000, 3000)}",
+        """
+        pattern password randomization 
+        
+        Params:
+            name: example or sample string password.
+            
+        Return:
+            your generated password.
+        """
+        templates = [                                                   # PATTERN
+            lambda x: f"{x}{random.randint(10,99)}",                    # [string_name][number 10 - 99]
+            lambda x: f"{x}{random.choice(self.code)}",                 # [string_name][country_code]
+            lambda x: f"{x}!{x[0]}{random.randint(1,9)}{x[-1]}",        # [string_name]![first char string name][number 1, 0][last char string name]
+            lambda x: f"{x}{random.choice(self.wordlist)}",             # [string_name][random wordlist]
+            lambda x: f"{x}{random.randint(2000, 2026)}",               # [string_name][number 2000 - 2026]
+            lambda x: f"{x}{x[-2:]}",                                   # [string_name][2 last char string name]
+            lambda x: f"{random.choice(self.wordlist)}-{x}",            # [random wordlist]-[string name]
+            lambda x: f"{x[:3]}_{x[-3:]}",                              # [take 3 first char]_[take 3 first char]
+            lambda x: f"{x}{random.randint(1, 10000)}",                 # [string_name][random number 1 - 10.000]
+            lambda x: f"{x}{random.choice(self.sifat)}",                # [string_name][random characteristic]
+            lambda x: f"{self.sifat}_{x}{random.randint(1, 10000)}",    # [random characteristic]_[string name][number 1 - 10.000]
+            lambda x: f"{self.benda}{random.randint(2000, 3000)}",      # [random object name][number 2000 - 3000]
         ]
         
         return random.choice(templates)(name)
     
     def randomize(self) -> str:
+        """
+        return randomzied password.
+        """
         return self._apply_random_format(name=random.choice(self.wordlist))
     
 if __name__ == '__main__':
