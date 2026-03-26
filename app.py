@@ -8,20 +8,20 @@ class Generator:
         self.code: List[str] = ["bt", "id", "kt", "pn"]
         
         # 'sifat' mean characteristic or 'trait' in english
-        self.sifat: list = random.choice([
+        self.sifat: List[str] = [
             "lucu", "cepat", "marah", 
             "dingin", "nakal", "lambat", 
             "galak", "imut", "jahil", "ramah",
             "liar", "aneh", "berani"
-        ])
+        ]
         
         # 'benda' mean object like 'chair' or something like that.
-        self.benda: list = random.choice([
+        self.benda: List[str] = [
             "kucing", "robot", "ninja", 
             "kodok", "pirat", "monyet", 
             "gajah", "bajaklaut", "panda", 
             "serigala", "alien", "naga"
-        ])
+        ]
         
         # general wordlist indonesian, combined with name of lot a people, city name, village name, string number and combined with unique name 
         # unique name like 'konoha' from naruto seriues :D
@@ -30,9 +30,9 @@ class Generator:
 	        'babi', 'baby', 'badriah', 'bajingan', 'bagong', 'bandung', 'bngst', 'bangsat', 'bela', 'bella', 'bibah', 'bila', 'billa', 'belinda', 'betharia', 'bintang', 'briana', 'britania', 'briela', 'briyana', 'budiarti', 'bulan', 'bunga', 'bungsu', 'bunyamin', 'butet',
 	        'ca', 'cabi', 'cabhy', 'caby', 'cabby', 'caca', 'cca', 'cahaya', 'cahya', 'cahyani', 'cahyaningsih', 'caitlyn', 'camelia', 'cangcut', 'can', 'cans', 'canss', 'cantik', 'cantika', 'caroline', 'charrisa', 'catherine', 'cassandra', 'celine', 'cecilia', 'celsi', 'celsie', 'centil', 'chaca', 'chacha', 'chelsi', 'chelsie', 'chelsea', 'chesi', 'chessy', 'chika', 'cia', 'cci', 'cici', 'cika', 'cimok', 'cindy', 'cinta', 'cintia', 'cintaku', 'cintya', 'cintiya', 'citra', 'chindy', 'claudya', 'cucu', 'ccu', 'culun', 'cupu', 'cynthia', 'cyntia',
 	        'dafin', 'dahlia', 'daiba', 'dania', 'daniah', 'daniyah', 'danyyah', 'daswita', 'dara', 'davina', 'darsie', 'dawy', 'de', 'dea', 'dede', 'dela', 'della', 'delia', 'delicia', 'denia', 'deniah', 'deniyah', 'deon', 'debi', 'deby', 'debby', 'denita', 'denisa', 'devi', 'devia', 'devie', 'desnia', 'desnie', 'divita', 'desi', 'desita', 'deswita', 'dewandana', 'dwi', 'dewi', 'dewita', 'dhairya', 'dhara', 'dhe', 'dhea', 'dheniah', 'dhewi', 'dhita', 'dhiya', 'dia', 'diah', 'diajeng', 'dian', 'diana', 'diandra', 'diannova', 'dias', 'diinah', 'dika', 'diksa', 'dila', 'dilla', 'dipa', 'diva', 'dianda', 'dila', 'dilla', 'dira', 'dina', 'dinda', 'dini', 'diniah', 'diniyah', 'disa', 'disha', 'dita', 'divya', 'dixha', 'diya', 'diyah', 'diyara', 'dnya', 'dona', 'dyra', 'dyah', 'dzafina', 'djakarta',
-	        'eka', 'elailah', 'elaina', 'eira', 'eisha', 'elaina', 'elda', 'elea', 'elena', 'eleanor', 'eleanoer', 'eleha', 'eletha', 'elfie', 'elga', 'elia', 'eliana', 'elicia', 'elika', 'elin', 'elina', 'elisabeth', 'elis', 'ellis', 'elise', 'eliya', 'eliza', 'elizabeth', 'ella', 'ellen', 'elliana', 'ellie', 'elma', 'elmira', 'elora', 'elisa', 'elisha', 'elisia', 'elisiya', 'elisya', 'elisyha', 'elsye', 'elfina', 'elsa', 'evi', 'epi', 'elisabeth', 'elin', 'elsy', 'elva', 'elvira', 'elly' 'elvina', 'elzahra', 'embun', 'emeline', 'ekavira', 'emery', 'emi', 'emilia', 'emy', 'emyliya', 'ema', 'emma', 'emily', 'emira', 'endah', 'endang', 'epi', 'erna', 'erni', 'eri', 'erika', 'erina', 'erlinda', 'esti', 'estiana', 'eis', 'eti', 'etie', 'ety', 'euis', 'eva', 'evi', 'evita', 'evitamala', 'evalina', 'evelyn', 'ewe',
+	        'eka', 'elailah', 'elaina', 'eira', 'eisha', 'elaina', 'elda', 'elea', 'elena', 'eleanor', 'eleanoer', 'eleha', 'eletha', 'elfie', 'elga', 'elia', 'eliana', 'elicia', 'elika', 'elin', 'elina', 'elisabeth', 'elis', 'ellis', 'elise', 'eliya', 'eliza', 'elizabeth', 'ella', 'ellen', 'elliana', 'ellie', 'elma', 'elmira', 'elora', 'elisa', 'elisha', 'elisia', 'elisiya', 'elisya', 'elisyha', 'elsye', 'elfina', 'elsa', 'evi', 'epi', 'elisabeth', 'elin', 'elsy', 'elva', 'elvira', 'elly', 'elvina', 'elzahra', 'embun', 'emeline', 'ekavira', 'emery', 'emi', 'emilia', 'emy', 'emyliya', 'ema', 'emma', 'emily', 'emira', 'endah', 'endang', 'epi', 'erna', 'erni', 'eri', 'erika', 'erina', 'erlinda', 'esti', 'estiana', 'eis', 'eti', 'etie', 'ety', 'euis', 'eva', 'evi', 'evita', 'evitamala', 'evalina', 'evelyn', 'ewe',
 	        'fara', 'farah', 'farrah', 'fadila', 'fadla', 'fadhila', 'fadhla', 'faija', 'faiza', 'faizza', 'faizah', 'fani', 'fanni', 'fany', 'fanny', 'fanya', 'farhah', 'farhana', 'farida', 'faridha', 'fasya', 'fasha', 'fathia', 'fatin', 'fatina', 'fatthyyah', 'faujia', 'faujiah', 'fauzia', 'fauziah', 'fauziya', 'fauzyah', 'fawziyah', 'fazila', 'fazilla', 'fazeela', 'fatim', 'fatima', 'fatimah', 'fathimah', 'felisia', 'felisya', 'ferli', 'ferly', 'ferlyani', 'fika', 'fina', 'fiona', 'fionna', 'fida', 'fira', 'firli', 'firly', 'firlly', 'firliani', 'firliyani', 'fita', 'fitri', 'fitriani', 'fitriyani', 'fitryani', 'fiska', 'fizka', 'fiza', 'frisilia', 'frisiliya', 'freya', 'friska', 'fuji', 'fuzi',
-	        'gabriella', 'gaby', 'gabby', 'garut', 'gadis', 'geby', 'gebby', 'gelsey', 'gendis', 'gemma', 'georgia', 'gloria', 'gea', 'ghwa', 'gia', 'ghia', 'ghina', 'ghita"', 'gina', 'ginna', 'gisela', 'gisella', 'gita', 'gitta', 'grace', 'gracia','grachelyn','gracheline', 'graciella', 'greta', 'gresia', 'gresik', 'glenda', 'gloria', 'giska', 'greta', 'ganesha', 'geisha', 'genta', 'gwendolyn',
+	        'gabriella', 'gaby', 'gabby', 'garut', 'gadis', 'geby', 'gebby', 'gelsey', 'gendis', 'gemma', 'georgia', 'gloria', 'gea', 'ghwa', 'gia', 'ghia', 'ghina', 'ghita', 'gina', 'ginna', 'gisela', 'gisella', 'gita', 'gitta', 'grace', 'gracia','grachelyn','gracheline', 'graciella', 'greta', 'gresia', 'gresik', 'glenda', 'gloria', 'giska', 'greta', 'ganesha', 'geisha', 'genta', 'gwendolyn',
 	        'habibah', 'harika', 'hafsa', 'halima', 'halia', 'halimah', 'hafiza', 'hafsah', 'hafiza', 'hafizah', 'hana', 'handayani', 'handayanti', 'hanna', 'hannah', 'hani', 'hany', 'hanny', 'hanifah', 'hanipah', 'haila', 'hayla', 'hania', 'haniya', 'hartini', 'hasanah', 'hatima', 'hatimah', 'hilda', 'hilma', 'hilmawati', 'hiya', 'helen', 'helena', 'hellen', 'helia', 'helin', 'helina', 'hemalia', 'hepti', 'hesa', 'hessa', 'hesha', 'hesti', 'hestia', 'hesty', 'helga', 'hasna', 'hinata', 'hikmat', 'hopi', 'hopipah', 'hoho', 'hotima', 'hotimah', 'hikmah', 'humaida', 'humayda', 'husna', 'hurairah',
 	        'ica', 'icaa', 'icha', 'ichaa', 'ida', 'ifa', 'iffa', 'ilmira', 'ina', 'inna', 'inaara', 'inara', 'inarah', 'inayah', 'indah', 'indira', 'indyra', 'indri', 'indry', 'insan', 'insani', 'imelda', 'ina', 'irma', 'irena', 'ika', 'ijah', 'intan', 'intanrahayu', 'ira', 'isabela', 'isabella', 'isan', 'isana', 'isyana', 'isah', 'isma', 'ismawati', 'ismawaty', 'ismi', 'ismiya', 'ismiyati', 'isnaen', 'isnaeni', 'isni', 'iza', 'izah', 'izna', 'iysha',
 	        'jafira', 'jahira', 'jalilah', 'jahra', 'jamilah', 'janeta', 'jameela', 'jannah', 'janita', 'jasmin', 'jasmine', 'jayanti', 'jelita', 'jeni', 'jeny', 'jenny', 'jennifer', 'jenita', 'jennita', 'jesica', 'jesicca', 'jesika', 'jihan', 'jihana', 'jingga', 'juwita', 'juli', 'julia', 'juliana', 'juliet', 'jumaina', 'jumainah', 'juniarti', 'junaina', 'juwitta', 'jwita',
@@ -41,7 +41,7 @@ class Generator:
             'mae', 'maemunah', 'maesarah', 'maesaroh', 'mala', 'maida', 'maidah', 'maira', 'maisa', 'maisha', 'malika', 'maimunah', 'magfirah', 'mahalini', 'maharani', 'maharini', 'mahda', 'manda', 'mandha', 'maria', 'mardiah', 'mardianti', 'mardiyanti', 'mardyah', 'mardiyah', 'mariah', 'mariam', 'mariyah', 'maryati', 'mariati', 'mariyati', 'markonah', 'mariyam', 'marisa', 'marissa', 'martina', 'martinah', 'martini', 'maryamah', 'marwah', 'maryanti', 'marwati',  'marwaty', 'marzia', 'marziya', 'masitoh', 'masriah', 'masriyah', 'maulida', 'maulidia', 'maulidya', 'maulidiya', 'mawar', 'maya', 'mayra', 'maymuna', 'maymunah', 'marziah', 'meca', 'mecca', 'meka', 'medina', 'mega', 'megan', 'melani', 'melany', 'melina', 'meli', 'melinda', 'melisa', 'melly', 'merry', 'mia', 'mieta', 'mietaa', 'mila', 'mimin', 'mira', 'miraa', 'mirna', 'miranda', 'miya', 'mufliha', 'muna', 'munawarah', 'munawwarah', 'munawaroh', 'murni', 'murniati', 'murniyati', 'muslima', 'mulimah', 'muti', 'mutmainah', 'muthmainnah', 'mutmaidah', 'muthmaidah', 'mutia', 'mutiara',
             'nabila', 'nada', 'nadhin', 'nadia', 'nadira', 'nadhira', 'nadin', 'nadiya', 'nafisa', 'nafisha', 'nafisah', 'nagita', 'naila', 'naira', 'najwa', 'nana', 'nanda', 'nani', 'natalia', 'nataliya', 'natasia', 'natasya', 'natasyha', 'nasa', 'naura', 'nayara', 'nayyara', 'nayra', 'nayla', 'naswa', 'nashwa', 'nasywa', 'nazwa', 'nia', 'nida', 'nifa', 'nina', 'nindi', 'nindy', 'ningrum', 'ningsih', 'nita', 'nitatalia', 'niken', 'nisa', 'nissa', 'nurul', 'nopi', 'novi', 'novita', 'nurull', 'nunung', 'nuri', 'nurianti', 'nurjanah', 'nurjannah', 'nuryanti',
             'oca', 'octa', 'octavia', 'olivia', 'ollivia', 'oliv', 'olive', 'olla', 'okta', 'oktavia', 'ocha', 'odie', 'omaira', 'ogut', 'xabiya', 'xaviera', 'xavira', 'xena', 'xiao', 'xyla',
-            'padma', 'putri', 'puspa', 'pipit', 'prita', 'paras', 'paramita' 'permata','permatasari', 'purnama', 'purnamasari', 'puspa','putri', 'puteri', 'pitri', 'pratiwi', 'pramita', 'priyanka',
+            'padma', 'putri', 'puspa', 'pipit', 'prita', 'paras', 'paramita', 'permata','permatasari', 'purnama', 'purnamasari', 'puspa','putri', 'puteri', 'pitri', 'pratiwi', 'pramita', 'priyanka',
             'qaidah', 'qaila', 'qailla', 'qanita', 'qasidah', 'qasimah', 'qiana', 'qiani', 'qila', 'qilla', 'qiqi', 'qonita', 'qori', 'qoriah', 'qoriyah', 'qosamah', 'qosimah', 'qalesya',
             'ra', 'raa', 'raina', 'rana', 'rabiah', 'rabiyah', 'rafa', 'raisa', 'raiqah', 'raimah', 'rahma', 'rahmah', 'rahmaa', 'rahmawati', 'rahmawaty', 'rhma', 'rahnadani', 'rahmadhani', 'ramadani', 'ramadhani', 'rani', 'rany', 'raniah', 'rasya', 'rati', 'ratifah', 'rara', 'rere', 'refa', 'repa', 'reva', 'repani', 'revani', 'rena', 'renatri', 'reni', 'renata', 'rani', 'ratna', 'raya', 'rina', 'rida', 'rifda', 'rifdah', 'rini', 'ririn', 'rianti', 'rianty', 'riyanti', 'riyanty', 'riska', 'rizka', 'rohma', 'rohmah', 'rohmawati', 'rohmawaty', 'rona', 'rosdiana', 'rosdiani', 'ross', 'rossa', 'rosita', 'rosalina', 'rossalina', 'rosmanah', 'rum', 'rumaidah', 'ruwaidah', 'ryzka',
             'sadiya', 'sabira', 'sabhira', 'sahara', 'saharah', 'sahla', 'saleha', 'saila', 'salima', 'salimah', 'sabha', 'sabrina', 'safa', 'saffa', 'safna', 'safira', 'saidah', 'sahira', 'sakila', 'sakinah', 'sakira', 'salma', 'salmaira', 'salsa', 'salsabila', 'salsabilla', 'salsabylla', 'salwa', 'santi', 'sani', 'santy', 'santika', 'sara', 'shafira', 'shavira', 'shakira', 'shalina', 'shafna', 'shafana', 'shaleha', 'shalehah', 'shakeera', 'shakila', 'shalihah', 'shanti', 'shanty', 'shantika', 'shani', 'shaniyah', 'shofy', 'shofiyah', 'shofiyyah', 'sholeha', 'sholehah', 'sifa', 'silawati', 'sipa', 'silpi', 'silvi', 'siska', 'sinta', 'suci', 'selly', 'safitri', 'saputri', 'sarah', 'saras', 'sarasvati', 'saraswati', 'sari', 'sasmita', 'setiawati', 'sisil', 'siti', 'sity', 'siregar', 'simanjuntak', 'solha', 'solehah', 'sonia', 'soraya', 'sukma', 'suci', 'sumi', 'sumiyati', 'suraya', 'suraiya', 'suratni', 'surtini', 'suratmi', 'sasanti', 'susanty', 'susi', 'susilawati', 'susilawaty', 'susy', 'sutari', 'suteni', 'susu', 'syafaa', 'syakila', 'syakira', 'syifa', 'sypa', 'sya', 'syahla', 'syahira', 'syafira', 'syavira',
@@ -65,19 +65,24 @@ class Generator:
         Return:
             your generated password.
         """
+        sifat: str = random.choice(self.sifat)
+        benda: str = random.choice(self.benda)
+        code: str = random.choice(self.code)
+        word: str = random.choice(self.wordlist)
+        
         templates = [                                                   # PATTERN
             lambda x: f"{x}{random.randint(10,99)}",                    # [string_name][number 10 - 99]
-            lambda x: f"{x}{random.choice(self.code)}",                 # [string_name][country_code]
+            lambda x: f"{x}{code}",                                     # [string_name][country_code]
             lambda x: f"{x}!{x[0]}{random.randint(1,9)}{x[-1]}",        # [string_name]![first char string name][number 1, 0][last char string name]
-            lambda x: f"{x}{random.choice(self.wordlist)}",             # [string_name][random wordlist]
+            lambda x: f"{x}{word}",                                     # [string_name][random wordlist]
             lambda x: f"{x}{random.randint(2000, 2026)}",               # [string_name][number 2000 - 2026]
             lambda x: f"{x}{x[-2:]}",                                   # [string_name][2 last char string name]
-            lambda x: f"{random.choice(self.wordlist)}-{x}",            # [random wordlist]-[string name]
+            lambda x: f"{word}-{x}",                                    # [random wordlist]-[string name]
             lambda x: f"{x[:3]}_{x[-3:]}",                              # [take 3 first char]_[take 3 first char]
             lambda x: f"{x}{random.randint(1, 10000)}",                 # [string_name][random number 1 - 10.000]
-            lambda x: f"{x}{random.choice(self.sifat)}",                # [string_name][random characteristic]
-            lambda x: f"{self.sifat}_{x}{random.randint(1, 10000)}",    # [random characteristic]_[string name][number 1 - 10.000]
-            lambda x: f"{self.benda}{random.randint(2000, 3000)}",      # [random object name][number 2000 - 3000]
+            lambda x: f"{x}{sifat}",                                    # [string_name][random characteristic]
+            lambda x: f"{sifat}_{x}{random.randint(1, 10000)}",         # [random characteristic]_[string name][number 1 - 10.000]
+            lambda x: f"{benda}{random.randint(2000, 3000)}",           # [random object name][number 2000 - 3000]
         ]
         
         return random.choice(templates)(name)
